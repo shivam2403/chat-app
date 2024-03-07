@@ -41,9 +41,11 @@ export const sendMessage=async(req,res)=>{
         const newMessage = new Message({
             senderId,
             receiverId,
-            message
+            message,
+            createdTime:new Date()
         })
     
+        console.log(newMessage)
         if(newMessage){
             conversation.message.push(newMessage._id)
         }
